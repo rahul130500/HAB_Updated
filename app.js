@@ -30,7 +30,7 @@ mongoose
   .then(() => console.log("Successful DB connection"))
   .catch((err) => console.error("DB connection fail"));
 
-const userRoutes = require("./routes/user.routes");
+const userRoutes = require("./routes/userupdated.routes");
 const adminRoutes = require("./routes/admin.routes");
 const noticeRoutes = require("./routes/notice.routes");
 const functionaryRoutes = require("./routes/functionary.routes");
