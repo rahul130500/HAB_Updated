@@ -13,33 +13,91 @@
             -webkit-transition: all 1s; */
             z-index: 5;
         }
+        .splide__slide img {
+         height: 75vh;
+         width: 100%;
+         z-index:-100;
+
+        }
+        .splide__slide{
+        width:100%;
+        padding: 0;
+        margin: 0;
+
+        }
     </style>
     </div>
-    <div class="demo-1 slides" id="slides1">
-        <main class="relative">
-            <div id="content" class="content">
-                <div id="slider" class="" data-images= <%=JSON.stringify(uploadImages)%> data-displacement="" />
+    <div class="contain">
+        <div id="image-slider" class="splide">
+            <div class="splide__track">
+                
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619411257690brahmaputra.jpg" alt="">
+                        
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619411297626Lohit.jpg">
+                        
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619411325809kameng.jpg">
+
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619411372731kapili.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619595811524siang.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619595885037umiam.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596258173subansiri.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596296093manas.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596418613disang.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596500611dihing.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596540310dibang.jpg">
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="uploads/adminUploads/1619596567562dhansiri.jpg">
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <section id="top">
+                    <div class="top_content relative w-11/12 md:w-4/5 h-full mx-auto z-10 flex flex-col md:flex-row">
+                        <div
+                            class="top_title w-full  md:w-1/2 md:h-full flex flex-col sm:flex-row justify-start items-center md:-mt-80 -mt-96">
+                            <img src="/hab/images/headers/logo.svg" alt="logo"
+                                class="transform md:scale-90 scale-50 md:mr-1">
+                            <h2 class="md:text-6xl text-5xl text-white text-center sm:text-left font-black"
+                                style="font-family: Mulish">Hostel
+                                Affairs <br> Board</h2>
+                        </div>
+
+
+                </section>
+                <div class="overlay "></div>
+
+
             </div>
-            <div class="overlay "></div>
-            <section id="top">
-                <div class="top_content relative w-11/12 md:w-4/5 h-full mx-auto z-10 flex flex-col md:flex-row">
-                    <div
-                        class="top_title w-full  md:w-1/2 md:h-full flex flex-col sm:flex-row justify-start items-center md:-mt-80 -mt-96">
-                        <img src="/hab/images/headers/logo.svg" alt="logo"
-                            class="transform md:scale-90 scale-50 md:mr-1">
-                        <h2 class="md:text-6xl text-5xl text-white text-center sm:text-left font-black"
-                            style="font-family: Mulish">Hostel
-                            Affairs <br> Board</h2>
-                    </div>
 
-
-            </section>
-
-
-        </main>
-
+        </div>
 
     </div>
-    </div>
+
 
 </header>
