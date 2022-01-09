@@ -17,13 +17,34 @@ const HMC = require("../models/hostelModels/hmc.models");
 const HostelForm = require("../models/hostelModels/mess");
 const HostelEvent = require("../models/hostelModels/event");
 
+let uploads = null
+        let announcements = null
+        let aboutInfos = null
+        let uploadImages = [];
+        //console.log(announcements);
+       // let aboutInfos = null;
+        let categories = null;
+        let notices = null;
+        let hostels = null;
+        let functionaries = null;
+        let ordinances = null;
+        let links = null;
+        let forms = null;
 exports.getHome = async (req, res) => {
     try{
         const uploads = await AdminUpload.find({});
         const announcements = await Announcement.find({}).sort("-creation");
-        const about = await About.find({}).sort("priority_number");
+        const aboutInfos = await About.find({}).sort("priority_number");
         let uploadImages = [];
         console.log(announcements);
+       // let aboutInfos = null;
+        let categories = null;
+        let notices = null;
+        let hostels = null;
+        let functionaries = null;
+        let ordinances = null;
+        let links = null;
+        let forms = null;
         uploads.forEach((upload) => {
             uploadImages.push(`uploads/adminUploads/${upload.image}`);
         });
@@ -32,7 +53,15 @@ exports.getHome = async (req, res) => {
             announcements,
             uploads,
             uploadImages,
-            about,
+            aboutInfos,
+            categories,
+            notices,
+            hostels,
+            functionaries,
+            ordinances,
+            links,
+            forms
+            
           });
     }
     catch(error){
@@ -42,13 +71,13 @@ exports.getHome = async (req, res) => {
 
 exports.getNotices = async (req, res) => {
     try{
-        const category = await Category.find({});
+        const categories = await Category.find({});
         const notices = await Notice.find({}).sort("-creation");
         let data = {
-            "category" : category,
+            "categories" : categories,
             "notices" : notices
         };
-        return res.status(200).send(data);
+        return res.status(200).send( data );
     }
     catch(error){
         console.log(error);
@@ -58,10 +87,10 @@ exports.getNotices = async (req, res) => {
 
 exports.getForms = async (req, res) => {
     try{
-        const category = await Category.find({});
+        const categories = await Category.find({});
         const forms = await Form.find({}).sort("-creation");
         let data = {
-            "category" : category,
+            "categories" : categories,
             "forms" : forms
         };
         return res.status(200).send(data);

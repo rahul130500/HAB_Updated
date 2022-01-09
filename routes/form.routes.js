@@ -15,14 +15,13 @@ const formController = require("../controllers/form.controller");
 
 const upload = multer({ storage: storage });
 
-router.get("/", isLoggedIn, isAdmin, formController.getForms);
+router.get("/",  formController.getForms);
 
-router.get("/add", isLoggedIn, isAdmin, formController.addFormForm);
+router.get("/add",  formController.addFormForm);
 
 router.post(
   "/",
-  isLoggedIn,
-  isAdmin,
+ 
   upload.single("form"),
   formController.postForm
 );

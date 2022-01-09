@@ -14,14 +14,12 @@ const storage = multer.diskStorage({
 const noticeController = require("../controllers/notice.controller");
 const upload = multer({ storage: storage });
 
-router.get("/", isLoggedIn, isAdmin, noticeController.getNotices);
+router.get("/",noticeController.getNotices);
 
-router.get("/add", isLoggedIn, isAdmin, noticeController.addNoticeForm);
+router.get("/add", noticeController.addNoticeForm);
 
 router.post(
   "/",
-  isLoggedIn,
-  isAdmin,
   upload.single("notice"),
   noticeController.postNotice
 );

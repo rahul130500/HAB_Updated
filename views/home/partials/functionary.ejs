@@ -1,7 +1,7 @@
 <section id="management">
     <div class="container md:px-24 px-5 py-20 mx-auto">
-        <div class="flex justify-evenly flex-wrap -m-4">
-            <% if(functionaries.length==0){%>
+        <div class="flex justify-evenly flex-wrap -m-4" id="div_functionaries">
+            <!-- <% if(!functionaries || functionaries.length==0){%>
                 <h1>No Functionaries To Show</h1>
                 <% }else{functionaries.forEach(functionary=>{ %>
                     <div class="profileCard h-auto m-4 bg-white rounded-sm"
@@ -21,14 +21,15 @@
                             </p>
                             <p class="py-0.5 text-sm font-normal text-gray-600 border-t">
                                 <i class="fas fa-at mr-2"></i><%=functionary.contact[1]%>
-                            </p>
+                            </p> -->
                             <!-- <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p> -->
 
-                        </div>
+                        <!-- </div>
                     </div>
-                    <% })} %>
+                    <% })} %> -->
 
 
         </div>
     </div>
 </section>
+<script src="/hab/js/noticeAPI.js"></script>

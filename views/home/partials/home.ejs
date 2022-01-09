@@ -2,6 +2,7 @@
     <div id="home_container" class="px-5 sm:px-12 lg:px-32 py-6 sm:pt-12 sm:pb-16 flex flex-col-reverse sm:flex-row">
         <div id="home_info" class="w-full sm:w-7/12 my-2 sm:my-0 sm:mx-1 p-4 bg-white rounded"
             style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
+            <% if(aboutInfos) { %>
             <% aboutInfos.forEach(aboutInfo=>{ %>
 
             <div class="mb-5">
@@ -10,6 +11,7 @@
                 </p>
             </div>
             <% }) %>
+            <% } %>
         </div>
         <div id="announcements" class="w-full sm:w-5/12 my-2 sm:my-0 sm:mx-1 p-4 bg-white rounded"
             style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
@@ -18,6 +20,7 @@
             </div>
 
             <div class="old_announce max-h-60 overflow-hidden">
+                 <% if(announcements) { %>
                 <% announcements.forEach((announcement, i)=>{ %>
                     <% if(announcement.link){ %>
                     <a href="<%=announcement.link%>" >
@@ -43,6 +46,7 @@
                         </p>
                     <% } %>
                     <% }) %>
+                   <%} %>
             </div>
 
             <div class="footer">

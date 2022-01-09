@@ -201,6 +201,7 @@
                                             <script
                                                 src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
                                             <script src="/hab/js/nav.js"></script>
+                                            <script src="/hab/js/noticeAPI.js"></script>
                                             <script src="/hab/js/newHome.js"></script>
                                             <script src="/hab/js/animation/three.js"></script>
                                             <script src="/hab/js/animation/dat-gui.js"></script>
@@ -208,6 +209,7 @@
                                             <script src="/hab/js/animation/sketch.js"></script>
                                             <script src="/hab/js/animation/demo1.js"></script>
                                             <script src="/hab//js/all.min.js"></script>
+                                            <script src="/hab/js/eventListeners.js"></script>
                                             <script>
                                                 // const card = document.querySelector(".home-card");
                                                 // const card_title = document.querySelector(".home-card h2");
@@ -296,9 +298,10 @@
                                                 }
 
                                                 function myFunction2(cate) {
+                                                    //console.log("kdkd");
                                                     var header = document.getElementById("cat");
                                                     var btns = header.getElementsByClassName("cta");
-
+                                                    //console.log("hahahaah");
                                                     var table, a2, a3, i, temp;
                                                     temp = document.getElementsByClassName("active")[0].innerHTML;
                                                     if (temp == "Notices") {

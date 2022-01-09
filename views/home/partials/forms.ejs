@@ -1,12 +1,12 @@
 <section id="forms">
-    <%- include("./category.ejs") %>
+    <%- include("./category2.ejs") %>
         <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
 
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-8 md:py-16 mx-auto flex flex-wrap">
-                    <div class="flex flex-wrap -m-4">
+                    <div class="flex flex-wrap -m-4" id="div_forms">
 
-                        <% if(forms.length==0){%>
+                        <!-- <% if(!forms || forms.length==0){%>
                             <h1>No Forms To Show</h1>
                             <% }else{ forms.forEach(form=>{ %>
                                 <div class="p-4 lg:w-1/2 md:w-full to-search-in">
@@ -48,9 +48,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <% })} %>
+                                <% })} %> -->
                     </div>
                 </div>
             </section>
-        </div>
+        </div>    
 </section>
+<script src="/hab/js/noticeAPI.js"></script>
