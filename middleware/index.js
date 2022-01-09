@@ -16,7 +16,7 @@
 // };
 
 exports.isLoggedIn = function (req, res, next) {
-  if (true) {
+  if (req.isAuthenticated()) {
     return next();
   }
   req.flash("info", "You need to login first!");
@@ -24,7 +24,7 @@ exports.isLoggedIn = function (req, res, next) {
 };
 
 exports.isAdmin = function (req, res, next) {
-  if (true) {
+  if (req.user.isAdmin) {
     return next();
   } else {
     //req.logout();
@@ -33,7 +33,7 @@ exports.isAdmin = function (req, res, next) {
 };
 
 exports.isHostelAdmin = function (req, res, next) {
-  if (true) {
+  if (req.user.isHostelAdmin) {
     return next();
   } else {
     req.flash("info", "You are unauthorized!");
