@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/hab/css/base.css" />
     <title>Hostel Affairs Board - IIT Guwahati</title>
     <link rel="icon" href="/hab/images/headers/logo2.svg" type="image/icon type" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <style>
         .tabs {
             border-left: 1.5px solid #525252;
@@ -197,6 +198,7 @@
                                         <%- include("./partials/footer.ejs") %>
 
 
+<<<<<<< HEAD
                                             <!-- Compiled and minified Materialize JS -->
                                             <script
                                                 src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -210,6 +212,20 @@
                                             <script src="/hab/js/animation/demo1.js"></script>
                                             <script src="/hab//js/all.min.js"></script>
                                             <script src="/hab/js/eventListeners.js"></script>
+=======
+                                        <!-- Compiled and minified Materialize JS -->
+                                        <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                                        <script src="/hab/js/nav.js"></script>
+                                        <script src="/hab/js/newHome.js"></script>
+                                        <script src="/hab/js/animation/three.js"></script>
+                                        <script src="/hab/js/animation/dat-gui.js"></script>
+                                        <script src="/hab/js/animation/gsap.js"></script>
+                                        <script src="/hab/js/animation/sketch.js"></script>
+                                        <script src="/hab/js/animation/demo1.js"></script>
+                                        <script src="/hab//js/all.min.js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+>>>>>>> b5b46ce7f099ccd72f465bfd13e5ae5f47a88630
                                             <script>
                                                 // const card = document.querySelector(".home-card");
                                                 // const card_title = document.querySelector(".home-card h2");
@@ -349,6 +365,25 @@
                                                     });
                                                 }
                                             </script>
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                  new Splide('#image-slider', {
+                                                    type:"loop",
+                                                    autoplay:true,
+                                                    pagination:false,
+                                                    arrows:false,
+                                                    lazyLoad:true,
+                                                    interval:3000,
+                                                    speed:1000,
+                                                  
+                                                    width:'100%',
+                                                    rewind:false,
+                                                    padding:'0%',
+                                            
+                                                  }).mount();
+                                                });
+                                              </script>
+                                            
 </body>
 
 </html>
