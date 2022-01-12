@@ -32,7 +32,12 @@
             <div class="splide__track">
                 
                 <ul class="splide__list">
-                    <li class="splide__slide">
+                    <% uploadImages.forEach((image)=>{ %>
+                        <li class="splide__slide">
+                            <img data-splide-lazy="<%=image %>" alt="">
+                        </li>
+                    <% }) %> 
+                    <!-- <li class="splide__slide">
                         <img data-splide-lazy="uploads/adminUploads/1619411257690brahmaputra.jpg" alt="">
                         
                     </li>
@@ -70,12 +75,7 @@
                     </li>
                     <li class="splide__slide">
                         <img data-splide-lazy="uploads/adminUploads/1619596567562dhansiri.jpg">
-                    </li>
-                    
-                    
-                    
-                    
-                    
+                    </li> -->
                 </ul>
                 <section id="top">
                     <div class="top_content relative w-11/12 md:w-4/5 h-full mx-auto z-10 flex flex-col md:flex-row">

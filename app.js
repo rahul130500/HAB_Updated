@@ -20,16 +20,17 @@ const passportSetup = require("./config/passport");
 require("dotenv").config();
 const { MONGO_URX } = process.env;
 
-mongoose.connect("mongodb+srv://kk:test1234@nodetuts.kajvw.mongodb.net/HAB?retryWrites=true&w=majority",{
-useNewUrlParser:true,
-useUnifiedTopology: true,
-useCreateIndex: true})
+mongoose.connect(MONGO_URX, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 //checking whether connected successfully or not
 
 const db = mongoose.connection;
- db.on("error", console.error.bind(console.log("connecting...")));
-db.once("open", ()=>{
-    console.log("database connected");
+db.on("error", console.error.bind(console.log("connecting...")));
+db.once("open", () => {
+  console.log("database connected");
 });
 
 const userRoutes = require("./routes/userupdated.routes");
