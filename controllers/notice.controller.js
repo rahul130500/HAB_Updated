@@ -131,6 +131,7 @@ exports.editNotice = async (req, res) => {
 exports.getOneNotice = async (req, res) => {
   try {
     const id = req.params.notice_id;
+    // console.log(notice_id);
     const notice = await Notice.findById(id);
     const filePath = "uploads/notice_pdf/" + notice.path;
     console.log(filePath);

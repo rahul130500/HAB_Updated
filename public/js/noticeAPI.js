@@ -137,7 +137,7 @@ async function fetchAPINotices()
      const data = await res.json();
 
        // console.log(res);
-        //console.log(data);
+        console.log(data);
         categories=data.categories;
         notices = data.notices;
         categoryEmbedding(categories,"cat");
@@ -188,7 +188,8 @@ async function fetchAPINotices()
                           class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded"
                           style=" color:white">`
                            if(notice.path.indexOf("https://")==-1) { 
-                             htmlString+=  `<a href=/hab/notices/${notice.id} target="_blank">VIEW
+                            //    console.log(notice.id);
+                             htmlString+=  `<a href=/hab/notices/${notice._id} target="_blank">VIEW
                                   PDF</a>`
                               } else { 
                                 htmlString+=`<a href=${notice.path} target="_blank">VIEW LINK</a>
@@ -268,9 +269,9 @@ async function fetchAPIForms()
                                     class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded"
                                     style=" color:white">`;
                                      if(form.path.indexOf("https://")==-1) {
-                                       htmlString += `<a href="/hab/forms/${form.id}" target="_blank">View Link</a>`
+                                       htmlString += `<a href="/hab/forms/${form._id}" target="_blank">View PDF</a>`
                                          } else { 
-                                            htmlString += `<a href=${form.path} target="_blank">View PDF</a>`
+                                            htmlString += `<a href=${form.path} target="_blank">View Link</a>`
                                              } 
 
                     htmlString += `</button>
@@ -324,7 +325,7 @@ async function fetchAPIHostels()
                             </p>
                             <button style=" color:white"
                                 class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded">
-                                <a href="/hab/hostels/${hostel.id}">View More</a>
+                                <a href="/hab/hostels/${hostel._id}">View More</a>
                             </button>
                         </div>
                         <!-- <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p> -->
@@ -469,7 +470,7 @@ async function fetchAPIOrdinance()
                                     class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded"
                                     style=" color:white">`
                                      if(ordinance.path.indexOf("https://")==-1) { 
-                                        htmlString +=`<a href="/hab/ordinances/${ordinance.id}" target="_blank">View
+                                        htmlString +=`<a href="/hab/ordinances/${ordinance._id}" target="_blank">View
                                             Link</a>`
                                          } else {
                                             htmlString += `<a href="${ordinance.path}" target="_blank">View PDF</a>`
@@ -540,7 +541,7 @@ async function fetchAPIUtils()
                     <li class="py-1">`
                       if(sublink.url.indexOf("https://")==-1){ 
                         htmlString+=`<a
-                        href="/hab/links/${link.id} /${sublink.id}"
+                        href="/hab/links/${link._id} /${sublink._id}"
                         target="_blank"
                         class="hover:text-blue-600"
                         >${sublink.name}</a
