@@ -503,9 +503,16 @@ async function fetchAPIUtils()
          console.log(links);
         const container = document.querySelector("#utils");
         let parentDiv = document.getElementById("div_utils");
-        
+        if(!links || links.length==0)
+        {console.log("haha");
+           let htmlString="";
+           htmlString += `<h1>No Utilities To Show</h1>`;
+           parentDiv.innerHTML+=htmlString;
+        }
+        var i = 0;
          if(links) {
             links.forEach(link=>{
+                ++i;
                 let htmlString = "";
                 htmlString +=
                 `<button
@@ -520,11 +527,13 @@ async function fetchAPIUtils()
                     collapsible
                     flex
                     justify-between
+                    
                   "
                   style="
                     box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
                       0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
                   "
+                  onClick="toggleList(${i})"
                 >
                   <span> ${link.name} </span>
             
@@ -532,13 +541,14 @@ async function fetchAPIUtils()
                     <div class="fa fa-chevron-up rotate down"></div>
                   </span>
                 </button>
-                <div class="cnt">
+                <div class="cnt" style="display: none;" id="toggleDiv${i}">
                   <ul class="list-disc pl-5">`
-
-                     link.sublinks.forEach(sublink=>{ 
+                   
+                     link.sublinks.forEach(sublink=>{
+                       
                          htmlString+=
                          `
-                    <li class="py-1">`
+                    <li class="py-1" X>`
                       if(sublink.url.indexOf("https://")==-1){ 
                         htmlString+=`<a
                         href="/hab/links/${link._id} /${sublink._id}"
@@ -548,7 +558,7 @@ async function fetchAPIUtils()
                       >`
                        }else{ 
                         htmlString+=
-                        `    <a
+                        `<a
                         href="${sublink.url}"
                         target="_blank"
                         class="hover:text-blue-600"
@@ -564,11 +574,14 @@ async function fetchAPIUtils()
                 </div>`
                 parentDiv.innerHTML+=htmlString;  })
                 }
-
-                if(!links || links.length==0)
-                 {console.log("haha");
-                    let htmlString="";
-                    htmlString += `<h1>No Utilities To Show</h1>`;
-                    parentDiv.innerHTML+=htmlString;
-                 }
+                console.log(parentDiv.innerHTML);
+             
             }}
+            function toggleList(i) {
+                var x = document.getElementById(`toggleDiv${i}`);
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+              }
