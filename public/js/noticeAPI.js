@@ -42,14 +42,7 @@ function categoryEmbedding(categories, id) {
                         onClick="myFunction2('')">
                         Clear All
                         <span class="ml-2"><i class="fas fa-times"></i></span>
-                    </button></a>
-    </div>
-    <div class="col-span-3 md:col-span-1 text-center pt-2 md:pt-0">
-        <form>
-            <input class="mySearch1 border-2 border-gray-300" onkeyup="myFunction1()" class="form-control me-2"
-                type="search" placeholder="Search" onClick="myFunction2('')">
-            </input>
-        </form>`;
+                    </button></a>`;
   parentDiv.innerHTML += htmlString;
 }
 
@@ -557,30 +550,29 @@ async function fetchAPIUtils() {
                         class="hover:text-blue-600"
                       >
                         ${sublink.name} </a
-                      >` } 
-                      htmlString+=
-                      ` </li>
-                    <hr style="border-color: rgb(224, 224, 224)" />`
-                     })
-                     htmlString+=
-                     `  </ul>
-                </div>`
-                parentDiv.innerHTML+=htmlString;  })
-                }
-                console.log(parentDiv.innerHTML);
-             
-            }}
-            function toggleList(i) {
-                var x = document.getElementById(`toggleDiv${i}`);
-                var y = document.getElementById(`toggleSVG${i}`);
-                console.log(y);
-                if (x.style.display === "none") {
-                  x.style.display = "block";
-                  console.log(y.className);
-                  y.className.baseVal= "svg-inline--fa fa-chevron-up fa-w-14 rotate"
-                  
-                } else {
-                  x.style.display = "none";
-                  y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate down"
-                }
-              }
+                      >`;
+          }
+          htmlString += ` </li>
+                    <hr style="border-color: rgb(224, 224, 224)" />`;
+        });
+        htmlString += `  </ul>
+                </div>`;
+        parentDiv.innerHTML += htmlString;
+      });
+    }
+    console.log(parentDiv.innerHTML);
+  }
+}
+function toggleList(i) {
+  var x = document.getElementById(`toggleDiv${i}`);
+  var y = document.getElementById(`toggleSVG${i}`);
+  console.log(y);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    console.log(y.className);
+    y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate";
+  } else {
+    x.style.display = "none";
+    y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate down";
+  }
+}
