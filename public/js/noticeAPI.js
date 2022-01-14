@@ -538,7 +538,7 @@ async function fetchAPIUtils()
                   <span> ${link.name} </span>
             
                   <span>
-                    <div class="fa fa-chevron-up rotate down"></div>
+                    <div class="fa fa-chevron-up rotate down" id="toggleSVG${i}"></div>
                   </span>
                 </button>
                 <div class="cnt" style="display: none;" id="toggleDiv${i}">
@@ -579,9 +579,15 @@ async function fetchAPIUtils()
             }}
             function toggleList(i) {
                 var x = document.getElementById(`toggleDiv${i}`);
+                var y = document.getElementById(`toggleSVG${i}`);
+                console.log(y);
                 if (x.style.display === "none") {
                   x.style.display = "block";
+                  console.log(y.className);
+                  y.className.baseVal= "svg-inline--fa fa-chevron-up fa-w-14 rotate"
+                  console.log(69);
                 } else {
                   x.style.display = "none";
+                  y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate down"
                 }
               }
