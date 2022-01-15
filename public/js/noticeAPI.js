@@ -24,6 +24,7 @@ function categoryEmbedding(categories, id) {
   let htmlString = "";
   //myFunction2(${category.name.toUpperCase()})
   if (categories) {
+    console.log(categories);
     categories.forEach((category) => {
       htmlString = "";
       htmlString += `
@@ -35,21 +36,13 @@ function categoryEmbedding(categories, id) {
       parentDiv.innerHTML += htmlString;
     });
   }
-  htmlString = ` <a class=" px-2 md:px-0 " style="text-decoration: none; color: inherit;"> <button
+  console.log(parentDiv.innerHTML);
+  htmlString = `  <a class=" px-2 md:px-0 " style="text-decoration: none; color: inherit;"> <button
                         class="cta act bg-gray-200 border-0 py-1  px-3 md:px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                         onClick="myFunction2('')">
                         Clear All
                         <span class="ml-2"><i class="fas fa-times"></i></span>
-                    </button></a>
-    </div>
-    </div>
-    <div class="col-span-3 md:col-span-1 text-center pt-2 md:pt-0">
-        <form>
-            <input class="mySearch1 border-2 border-gray-300" onkeyup="myFunction1()" class="form-control me-2"
-                type="search" placeholder="Search" onClick="myFunction2('')">
-            </input>
-        </form>
-        </div>`;
+                    </button></a>`;
   parentDiv.innerHTML += htmlString;
 }
 
@@ -145,10 +138,7 @@ async function fetchAPINotices() {
     //console.log(container);
     if (!notices || notices.length === 0) {
       let htmlString = "";
-      // console.log(parentDiv.parentElement.parentElement.parentElement);
-      let yn = parentDiv.parentElement.parentElement.parentElement;
-      yn.style.justifyContent = "center";
-      htmlString = `<h1 style= " text-align:center;">No Notices To Show!</h1>`;
+      htmlString = `<h1>No Notices To Show!</h1>`;
       parentDiv.innerHTML = htmlString;
     } else {
       // console.log(parentDiv);
@@ -158,14 +148,12 @@ async function fetchAPINotices() {
         htmlString = `<div class="p-4 lg:w-1/2 md:w-full to-search-in-notices" >
               <div class="notice_card flex border-2 rounded-lg border-gray-200 bg-white border-opacity-50 p-8 sm:flex-row flex-col"
                   style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
-
                   <div class="flex-grow">
                       <div class="flex justify-between">
                           <h2  class="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
                                
                              ${notice.category.toUpperCase()}
                           </h2>
-
                           <h2 
                           class="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
                            ${
@@ -179,14 +167,12 @@ async function fetchAPINotices() {
                       </h2>
                           
                       </div>
-
                       <h2  class="text-gray-900 text-lg title-font font-bold mb-3">
                           ${notice.title}
                       </h2>
                       <p id="four" class="leading-relaxed text-base">
                          ${notice.description}
                       </p><br>
-
                       <button
                           class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded"
                           style=" color:white">`;
@@ -241,14 +227,12 @@ async function fetchAPIForms() {
                     <div class="p-4 lg:w-1/2 md:w-full to-search-in">
                         <div class="form_card flex border-2 rounded-lg border-gray-200 bg-white border-opacity-50 p-8 sm:flex-row flex-col"
                             style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
-
                             <div class="flex-grow">
                                 <div class="flex justify-between">
                                     <h2
                                         class="tracking-widest text-xs title-font font-medium text-blue-600 mb-1 ">
                                         ${form.category.toUpperCase()} 
                                     </h2>
-
                                     <h2
                                         class="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
                                          ${
@@ -260,9 +244,7 @@ async function fetchAPIForms() {
                                          }
                                             
                                     </h2>
-
                                 </div>
-
                                 <h2 class="text-gray-900 text-lg title-font mb-3 font-bold">
                                      ${form.title}
                                 </h2>
@@ -335,7 +317,6 @@ async function fetchAPIHostels() {
                             </button>
                         </div>
                         <!-- <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p> -->
-
                     </div>
                 </div>`;
         parentDiv.innerHTML += htmlString;
@@ -393,7 +374,6 @@ async function fetchAPIFunctionaries() {
                             <i class="fas fa-at mr-2"></i>${functionary.contact[1]}
                         </p>
                         <!-- <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p> -->
-
                     </div>
                 </div>
                
@@ -436,7 +416,6 @@ async function fetchAPIOrdinance() {
                     <div class="p-4 lg:w-1/2 md:w-full to-search-in">
                         <div class="notice_card flex border-2 rounded-lg border-gray-200 bg-white border-opacity-50 p-8 sm:flex-row flex-col"
                             style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
-
                             <div class="flex-grow">
                                 <div class="flex justify-between">
                                     <h2
@@ -446,7 +425,6 @@ async function fetchAPIOrdinance() {
                                           ordinance.category.toUpperCase()
                                         }
                                     </h2>
-
                                     <h2
                                         class="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
                                         ${
@@ -458,16 +436,13 @@ async function fetchAPIOrdinance() {
                                         }
                                             
                                     </h2>
-
                                 </div>
-
                                 <h2 class="text-gray-900 text-lg title-font mb-3 font-bold">
                                     ${ordinance.title}
                                 </h2>
                                 <p class="leading-relaxed text-base">
                                     ${ordinance.description}
                                 </p><br>
-
                                 <button
                                     class="inline-flex text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded"
                                     style=" color:white">`;
@@ -548,7 +523,7 @@ async function fetchAPIUtils() {
                     <li class="py-1" X>`;
           if (sublink.url.indexOf("https://") == -1) {
             htmlString += `<a
-                        href="/hab/links/${link._id}/${sublink._id}"
+                        href="/hab/links/${link._id} /${sublink._id}"
                         target="_blank"
                         class="hover:text-blue-600"
                         >${sublink.name}</a
@@ -560,30 +535,29 @@ async function fetchAPIUtils() {
                         class="hover:text-blue-600"
                       >
                         ${sublink.name} </a
-                      >` } 
-                      htmlString+=
-                      ` </li>
-                    <hr style="border-color: rgb(224, 224, 224)" />`
-                     })
-                     htmlString+=
-                     `  </ul>
-                </div>`
-                parentDiv.innerHTML+=htmlString;  })
-                }
-                console.log(parentDiv.innerHTML);
-             
-            }}
-            function toggleList(i) {
-                var x = document.getElementById(`toggleDiv${i}`);
-                var y = document.getElementById(`toggleSVG${i}`);
-                console.log(y);
-                if (x.style.display === "none") {
-                  x.style.display = "block";
-                  console.log(y.className);
-                  y.className.baseVal= "svg-inline--fa fa-chevron-up fa-w-14 rotate"
-                  
-                } else {
-                  x.style.display = "none";
-                  y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate down"
-                }
-              }
+                      >`;
+          }
+          htmlString += ` </li>
+                    <hr style="border-color: rgb(224, 224, 224)" />`;
+        });
+        htmlString += `  </ul>
+                </div>`;
+        parentDiv.innerHTML += htmlString;
+      });
+    }
+    console.log(parentDiv.innerHTML);
+  }
+}
+function toggleList(i) {
+  var x = document.getElementById(`toggleDiv${i}`);
+  var y = document.getElementById(`toggleSVG${i}`);
+  console.log(y);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    console.log(y.className);
+    y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate";
+  } else {
+    x.style.display = "none";
+    y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate down";
+  }
+}
