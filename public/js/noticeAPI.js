@@ -138,6 +138,8 @@ async function fetchAPINotices() {
     //console.log(container);
     if (!notices || notices.length === 0) {
       let htmlString = "";
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
       htmlString = `<h1>No Notices To Show!</h1>`;
       parentDiv.innerHTML = htmlString;
     } else {
@@ -215,6 +217,8 @@ async function fetchAPIForms() {
     //console.log(container);
     if (!forms || forms.length === 0) {
       let htmlString = "";
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
       htmlString = `<h1>No Forms To Show</h1>`;
       parentDiv.innerHTML = htmlString;
     } else {
@@ -325,6 +329,8 @@ async function fetchAPIHostels() {
     if (!hostels || hostels.length == 0) {
       console.log("haha");
       let htmlString = "";
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
       htmlString += `<h1>No Hostels To Show</h1>`;
       parentDiv.innerHTML += htmlString;
     }
@@ -346,6 +352,8 @@ async function fetchAPIFunctionaries() {
   //console.log(container);
   if (!functionaries || functionaries.length === 0) {
     let htmlString = "";
+    let yn = parentDiv.parentElement.parentElement.parentElement;
+    yn.style.justifyContent = "center";
     htmlString = `<h1>No functionaries To Show</h1>`;
     parentDiv.innerHTML = htmlString;
   }
@@ -403,6 +411,8 @@ async function fetchAPIOrdinance() {
     //console.log(container);
     if (!ordinances || ordinances.length === 0) {
       let htmlString = "";
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
       htmlString = `<h1>No ordinances To Show</h1>`;
       parentDiv.innerHTML = htmlString;
     }
@@ -481,6 +491,8 @@ async function fetchAPIUtils() {
     if (!links || links.length == 0) {
       console.log("haha");
       let htmlString = "";
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
       htmlString += `<h1>No Utilities To Show</h1>`;
       parentDiv.innerHTML += htmlString;
     }
@@ -523,7 +535,7 @@ async function fetchAPIUtils() {
                     <li class="py-1" X>`;
           if (sublink.url.indexOf("https://") == -1) {
             htmlString += `<a
-                        href="/hab/links/${link._id} /${sublink._id}"
+                        href="/hab/links/${link._id}/${sublink._id}"
                         target="_blank"
                         class="hover:text-blue-600"
                         >${sublink.name}</a
