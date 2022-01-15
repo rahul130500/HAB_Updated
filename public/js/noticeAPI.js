@@ -24,7 +24,7 @@ function categoryEmbedding(categories, id) {
   let htmlString = "";
   //myFunction2(${category.name.toUpperCase()})
   if (categories) {
-    console.log(categories);
+
     categories.forEach((category) => {
       htmlString = "";
       htmlString += `
@@ -36,7 +36,7 @@ function categoryEmbedding(categories, id) {
       parentDiv.innerHTML += htmlString;
     });
   }
-  console.log(parentDiv.innerHTML);
+
   htmlString = `  <a class=" px-2 md:px-0 " style="text-decoration: none; color: inherit;"> <button
                         class="cta act bg-gray-200 border-0 py-1  px-3 md:px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                         onClick="myFunction2('')">
@@ -123,12 +123,11 @@ async function fetchAPINotices() {
   if (cnt1 === 0) {
     cnt6 = 0;
     ++cnt1;
-    console.log(cnt1);
     const res = await fetch("http://localhost:8080/hab/notices");
     const data = await res.json();
 
     // console.log(res);
-    console.log(data);
+    //console.log(data);
     categories = data.categories;
     notices = data.notices;
     categoryEmbedding(categories, "cat");
@@ -206,12 +205,12 @@ async function fetchAPIForms() {
     const data = await res.json();
 
     // console.log(res);
-    console.log(data);
+    //console.log(data);
     categories = data.categories;
     forms = data.forms;
     categoryEmbedding(categories, "cat2");
-    console.log(categories);
-    console.log(forms);
+    //console.log(categories);
+   // console.log(forms);
     const container = document.querySelector("#forms");
 
     //console.log(container);
@@ -282,11 +281,11 @@ async function fetchAPIHostels() {
     const data = await res.json();
 
     // console.log(res);
-    console.log(data);
+   // console.log(data);
     hostels = data;
 
     // console.log(categories);
-    console.log(hostels);
+    //console.log(hostels);
     const container = document.querySelector("#hostels");
     let parentDiv = document.getElementById("div_hostels");
 
@@ -327,7 +326,7 @@ async function fetchAPIHostels() {
       });
     }
     if (!hostels || hostels.length == 0) {
-      console.log("haha");
+      //console.log("haha");
       let htmlString = "";
       let yn = parentDiv.parentElement.parentElement.parentElement;
       yn.style.justifyContent = "center";
@@ -345,7 +344,7 @@ async function fetchAPIFunctionaries() {
   // console.log(data);
   functionaries = data;
   // console.log(categories);
-  console.log(functionaries);
+  //console.log(functionaries);
   const container = document.querySelector("#management");
   let parentDiv = document.getElementById("div_functionaries");
 
@@ -403,8 +402,8 @@ async function fetchAPIOrdinance() {
     ordinances = data.ordinances;
     categories = data.category;
     categoryEmbedding(categories, "cat3");
-    console.log(categories);
-    console.log(ordinances);
+    //console.log(categories);
+   // console.log(ordinances);
     const container = document.querySelector("#ordinance");
     let parentDiv = document.getElementById("div_ordinances");
 
@@ -481,15 +480,15 @@ async function fetchAPIUtils() {
     const data = await res.json();
 
     // console.log(res);
-    console.log(data);
+   // console.log(data);
     links = data;
 
     // console.log(categories);
-    console.log(links);
+    //console.log(links);
     const container = document.querySelector("#utils");
     let parentDiv = document.getElementById("div_utils");
     if (!links || links.length == 0) {
-      console.log("haha");
+     // console.log("haha");
       let htmlString = "";
       htmlString += `<h1 style = "text-align : center;">No Utilities To Show</h1>`;
       parentDiv.innerHTML += htmlString;
@@ -555,16 +554,16 @@ async function fetchAPIUtils() {
         parentDiv.innerHTML += htmlString;
       });
     }
-    console.log(parentDiv.innerHTML);
+   // console.log(parentDiv.innerHTML);
   }
 }
 function toggleList(i) {
   var x = document.getElementById(`toggleDiv${i}`);
   var y = document.getElementById(`toggleSVG${i}`);
-  console.log(y);
+ // console.log(y);
   if (x.style.display === "none") {
     x.style.display = "block";
-    console.log(y.className);
+   // console.log(y.className);
     y.className.baseVal = "svg-inline--fa fa-chevron-up fa-w-14 rotate";
   } else {
     x.style.display = "none";
