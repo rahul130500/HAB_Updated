@@ -331,7 +331,7 @@ async function fetchAPIHostels() {
       let htmlString = "";
       let yn = parentDiv.parentElement.parentElement.parentElement;
       yn.style.justifyContent = "center";
-      htmlString += `<h1>No Hostels To Show</h1>`;
+      htmlString += `<h1 style="text-align : center;">No Hostels To Show</h1>`;
       parentDiv.innerHTML += htmlString;
     }
   }
@@ -491,9 +491,7 @@ async function fetchAPIUtils() {
     if (!links || links.length == 0) {
       console.log("haha");
       let htmlString = "";
-      let yn = parentDiv.parentElement.parentElement.parentElement;
-      yn.style.justifyContent = "center";
-      htmlString += `<h1>No Utilities To Show</h1>`;
+      htmlString += `<h1 style = "text-align : center;">No Utilities To Show</h1>`;
       parentDiv.innerHTML += htmlString;
     }
     var i = 0;
