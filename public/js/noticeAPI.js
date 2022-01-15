@@ -24,7 +24,6 @@ function categoryEmbedding(categories, id) {
   let htmlString = "";
   //myFunction2(${category.name.toUpperCase()})
   if (categories) {
-    console.log(categories);
     categories.forEach((category) => {
       htmlString = "";
       htmlString += `
@@ -36,20 +35,21 @@ function categoryEmbedding(categories, id) {
       parentDiv.innerHTML += htmlString;
     });
   }
-  console.log(parentDiv.innerHTML);
-  htmlString = `  <a class=" px-2 md:px-0 " style="text-decoration: none; color: inherit;"> <button
+  htmlString = ` <a class=" px-2 md:px-0 " style="text-decoration: none; color: inherit;"> <button
                         class="cta act bg-gray-200 border-0 py-1  px-3 md:px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                         onClick="myFunction2('')">
                         Clear All
                         <span class="ml-2"><i class="fas fa-times"></i></span>
                     </button></a>
     </div>
+    </div>
     <div class="col-span-3 md:col-span-1 text-center pt-2 md:pt-0">
         <form>
             <input class="mySearch1 border-2 border-gray-300" onkeyup="myFunction1()" class="form-control me-2"
                 type="search" placeholder="Search" onClick="myFunction2('')">
             </input>
-        </form>`;
+        </form>
+        </div>`;
   parentDiv.innerHTML += htmlString;
 }
 
@@ -145,7 +145,10 @@ async function fetchAPINotices() {
     //console.log(container);
     if (!notices || notices.length === 0) {
       let htmlString = "";
-      htmlString = `<h1>No Notices To Show!</h1>`;
+      // console.log(parentDiv.parentElement.parentElement.parentElement);
+      let yn = parentDiv.parentElement.parentElement.parentElement;
+      yn.style.justifyContent = "center";
+      htmlString = `<h1 style= " text-align:center;">No Notices To Show!</h1>`;
       parentDiv.innerHTML = htmlString;
     } else {
       // console.log(parentDiv);
@@ -545,7 +548,7 @@ async function fetchAPIUtils() {
                     <li class="py-1" X>`;
           if (sublink.url.indexOf("https://") == -1) {
             htmlString += `<a
-                        href="/hab/links/${link._id} /${sublink._id}"
+                        href="/hab/links/${link._id}/${sublink._id}"
                         target="_blank"
                         class="hover:text-blue-600"
                         >${sublink.name}</a

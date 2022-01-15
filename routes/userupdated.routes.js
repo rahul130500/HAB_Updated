@@ -5,6 +5,7 @@ const userController = require("../controllers/userupdated.controller");
 const noticeController = require("../controllers/notice.controller");
 const ordinanceController = require("../controllers/ordinance.controller");
 const formController = require("../controllers/form.controller");
+const linkController = require("../controllers/link.controller");
 
 router.get("/", userController.getHome);
 router.get("/notices", userController.getNotices);
@@ -20,5 +21,6 @@ router.get("/forms/:id", formController.getOneForm);
 router.get("/hostels/:hostel_id", userController.getOneHostel);
 router.get("/hostels/:hostel_id/notice/pdf/:id", userController.getOneNotice);
 router.get("/hostels/:hostel_id/form/pdf/:id", userController.getOneForm);
+router.get("/links/:link_id/:sublink_id", linkController.getSublink);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const Link = require("../models/link");
 const fs = require("fs");
+const { fileURLToPath } = require("url");
 
 exports.getAllLinks = async (req, res) => {
   try {
@@ -216,20 +217,21 @@ exports.deleteSublink = async (req, res) => {
 
 exports.getSublink = async (req, res) => {
   try {
-    console.log("cool");
     const id = req.params.link_id;
     const subid = req.params.sublink_id;
-    const notice = await Link.findById(id);
-    console.log(notice.sublinks);
+    const link = await Link.findById(id);
+    // console.log(link.sublinks);
     var filepath;
-    for (var i = 0; i < notice.sublinks.length; i++) {
-      if (notice.sublinks[i]._id == subid) {
-        filepath = notice.sublinks[i].url;
+    for (var i = 0; i < link.sublinks.length; i++) {
+      if (link.sublinks[i]._id == subid) {
+        filepath = link.sublinks[i].url;
         break;
       }
     }
+    // const sublink = link.sublinks.findById(subid);
+
     const filePath1 = "uploads/link_pdf/" + filepath;
-    console.log(filePath1);
+    // console.log(filePath1);
     fs.readFile(filePath1, (err, data) => {
       res.contentType("application/pdf");
       return res.send(data);
